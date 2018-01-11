@@ -1,0 +1,27 @@
+Commands to activate ABB proxy
+
+1. Add two lines to the end of:
+sudo nano /etc/environment
+http_proxy=http://proxy.ch.abb.com:8080
+https_proxy=http://proxy.ch.abb.com:8080
+
+2. Add two addresses to hosts file:
+sudo nano /etc/hosts
+10.41.4.12      time1.ch.abb.com
+10.41.4.24      proxy.ch.abb.com
+
+3. Install network time protocol:
+sudo apt-get install -y ntp
+
+4. Add the following line to the end of:
+sudo nano /etc/ntp.conf
+server time1.ch.abb.com iburst
+
+5. Add following line to:
+sudo nano /etc/apt/apt.conf.d/10proxy
+Acquire::http::Proxy "http://proxy.ch.abb.com:8080";
+
+commands
+ls 10* /etc/apt/apt.conf.d
+cp /home/pi/Documents/10proxy /etc/apt/apt.conf.d/
+rm /etc/apt/apt.conf.d/
