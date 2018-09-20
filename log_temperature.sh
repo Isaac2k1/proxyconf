@@ -1,4 +1,4 @@
-p	#!/bin/bash
+#!/bin/bash
 # file location: /home/pi/CPU_temperature/log_temperature.sh
 path=/home/pi/proxyconf
 now=$(date +%Y-%m-%d_%H:%M:%S)
