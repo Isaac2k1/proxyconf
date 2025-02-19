@@ -1,3 +1,5 @@
+venv/
+temperature.log
 actual_CPU_temp*
 *.log
 *.gz
